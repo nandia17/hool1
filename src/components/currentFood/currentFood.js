@@ -7,7 +7,12 @@ const CurrentFood = (props) => {
         <h1>{props.ner}</h1>
         <p>{props.price}</p>
       </span>
-      <img src={props.ImgUrl} alt="food photo" width="40%" height="100px"></img>
+      <img
+        src={props.ImgUrl}
+        alt="food photo"
+        width="100px"
+        height="100px"
+      ></img>
     </div>
   );
 };

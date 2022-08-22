@@ -1,3 +1,6 @@
 .foode {
     background: aqua;
+    display: flex;
+    width: 100%;
+
 }
