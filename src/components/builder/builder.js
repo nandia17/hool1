@@ -2,9 +2,18 @@ import React, { Component } from "react";
 import CurrentOrder from "../current/current";
 import MenuBuilder from "../menubuilder/menubuilder";
 import style from "./style.module.css";
-
+import Number from "../Number/number";
 class Builder extends Component {
   state = {
+    shirheg: {
+      pizza1: 0,
+      pizza2: 2,
+      pizza3: 0,
+      pizza4: 0,
+      pizza5: 3,
+      pizza6: 0,
+      pizza7: 0,
+    },
     foods: [
       {
         ner: "pizza1",
@@ -70,17 +79,17 @@ class Builder extends Component {
     const shineHool = { ...this.state.shirheg };
     shineHool[type]++;
     this.setState({ shirheg: shineHool });
-    const shineUne = this.state.totalPrice + this.state.foods.price[type];
-    this.setState({ totalPrice: shineUne });
+    // const shineUne = this.state.totalPrice + this.state.foods.price[type];
+    // this.setState({ totalPrice: shineUne });
   };
   hoolHasah = (type) => {
-    if (this.state.foods[type] !== 0) {
+    if (this.state.shirheg[type] !== 0) {
       console.log("-----------" + type);
-      const shineHool = { ...this.state.foods };
+      const shineHool = { ...this.state.shirheg };
       shineHool[type]--;
-      this.setState({ foods: shineHool });
-      const shineUne = this.state.totalPrice + this.state.foods.price[type];
-      this.setState({ totalPrice: shineUne });
+      this.setState({ shirheg: shineHool });
+      // const shineUne = this.state.totalPrice + this.state.foods.price[type];
+      // this.setState({ totalPrice: shineUne });
     }
   };
   render() {
@@ -92,7 +101,9 @@ class Builder extends Component {
           hoolNemeh={this.hoolNemeh}
           hoolHasah={this.hoolHasah}
           price={this.state.totalPrice}
+          shirheg={this.state.shirheg}
         />
+        {/* <Number shirheg={this.state.shirheg} /> */}
       </div>
     );
   }

@@ -2,7 +2,6 @@ import React from "react";
 import stylee from "./style.module.css";
 import CurrentFoods from "../currentFood/currentFood";
 
-
 function CurrentOrder(props) {
   const w = [];
   props.foods.map((el, i) => {
@@ -12,11 +11,19 @@ function CurrentOrder(props) {
         ner={el.ner}
         price={el.price}
         ImgUrl={el.imgUrl}
-        shirheg={el.shirheg}
+        shirheg={props.shirheg}
       />
     );
   });
-  return <div className={stylee.www}>{w}</div>;
+  return (
+    <div className={stylee.www}>
+      {w}
+      <div className={stylee.ww}>Cashless Credit: {props.price} </div>
+      <div className={stylee.wwww}>
+        <button>Pay with Cashless Credit</button>
+      </div>
+    </div>
+  );
 }
 
 export default CurrentOrder;
