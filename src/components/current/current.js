@@ -22,6 +22,7 @@ function CurrentOrder(props) {
       <div className={stylee.wwww}>
         <button>Pay with Cashless Credit</button>
       </div>
+      <h2>Total: {props.price}</h2>
     </div>
   );
 }

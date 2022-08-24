@@ -12,13 +12,9 @@ const CurrentFood = (props) => {
         height="100px"
       ></img>
       <h3>{props.ner}</h3>
-      <button onClick={() => props.hoolNemeh(props.shirheg[props.ner])}>
-        +
-      </button>
+      <button onClick={() => props.hoolNemeh(props.shirheg)}>+</button>
       <p>{props.shirheg[props.ner]}</p>
-      <button onClick={() => props.hoolHasah(props.shirheg[props.ner])}>
-        -
-      </button>
+      <button onClick={() => props.hoolHasah(props.shirheg)}>-</button>
       <h3>{props.price}</h3>
     </div>
   );

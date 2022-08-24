@@ -3,6 +3,17 @@ import CurrentOrder from "../current/current";
 import MenuBuilder from "../menubuilder/menubuilder";
 import style from "./style.module.css";
 import Number from "../Number/number";
+
+const price = {
+  pizza1: 10,
+  pizza2: 20,
+  pizza3: 30,
+  pizza4: 40,
+  pizza5: 50,
+  pizza6: 60,
+  pizza7: 70,
+};
+
 class Builder extends Component {
   state = {
     shirheg: {
@@ -17,7 +28,7 @@ class Builder extends Component {
     foods: [
       {
         ner: "pizza1",
-        price: 1.3,
+        price: 10,
         weight: "156g",
         imgUrl:
           "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -25,7 +36,7 @@ class Builder extends Component {
       },
       {
         ner: "pizza2",
-        price: 1.3,
+        price: 20,
         weight: "170g",
         imgUrl:
           "https://images.pexels.com/photos/1633525/pexels-photo-1633525.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -33,7 +44,7 @@ class Builder extends Component {
       },
       {
         ner: "pizza3",
-        price: 1.3,
+        price: 30,
         weight: "156g",
         imgUrl:
           "https://images.pexels.com/photos/1410235/pexels-photo-1410235.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -41,7 +52,7 @@ class Builder extends Component {
       },
       {
         ner: "pizza4",
-        price: 1.3,
+        price: 40,
         weight: "190g",
         imgUrl:
           "https://images.pexels.com/photos/9093555/pexels-photo-9093555.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -49,7 +60,7 @@ class Builder extends Component {
       },
       {
         ner: "pizza5",
-        price: 1.3,
+        price: 50,
         weight: "180g",
         imgUrl:
           "https://images.pexels.com/photos/842571/pexels-photo-842571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -57,7 +68,7 @@ class Builder extends Component {
       },
       {
         ner: "pizza6",
-        price: 1.3,
+        price:60,
         weight: "150g",
         imgUrl:
           "https://images.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -65,7 +76,7 @@ class Builder extends Component {
       },
       {
         ner: "pizza7",
-        price: 1.3,
+        price: 70,
         weight: "160g",
         imgUrl:
           "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -79,8 +90,8 @@ class Builder extends Component {
     const shineHool = { ...this.state.shirheg };
     shineHool[type]++;
     this.setState({ shirheg: shineHool });
-    // const shineUne = this.state.totalPrice + this.state.foods.price[type];
-    // this.setState({ totalPrice: shineUne });
+    const shineUne = this.state.totalPrice + this.state.state.props.price[type];
+    this.setState({ totalPrice: shineUne });
   };
   hoolHasah = (type) => {
     if (this.state.shirheg[type] !== 0) {
@@ -88,8 +99,8 @@ class Builder extends Component {
       const shineHool = { ...this.state.shirheg };
       shineHool[type]--;
       this.setState({ shirheg: shineHool });
-      // const shineUne = this.state.totalPrice + this.state.foods.price[type];
-      // this.setState({ totalPrice: shineUne });
+      const shineUne = this.state.totalPrice + price[type];
+      this.setState({ totalPrice: shineUne });
     }
   };
   render() {
