@@ -5,7 +5,16 @@ function MenuBuilder(props) {
   const q = [];
   props.foods.map((el, i) => {
     q.push(
-      <Food key={el.ner + i} ner={el.ner} price={el.price} ImgUrl={el.imgUrl} />
+      <Food
+        key={el.ner + i}
+        ner={el.ner}
+        price={el.price}
+        weight={el.weight}
+        ImgUrl={el.imgUrl}
+        hoolNemeh={props.hoolNemeh}
+        hoolHasah={props.hoolHasah}
+        
+      />
     );
   });
   return <div className={css.menuBuilder}>{q}</div>;

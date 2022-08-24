@@ -1,6 +1,6 @@
 .menuBuilder {
   width: 70%;
-  border: 1px solid black;
+
   height: 90vh;
   overflow-y: scroll;
   display: flex;

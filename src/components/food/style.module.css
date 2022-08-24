@@ -1,5 +1,16 @@
 .food {
   width: 30%;
-  border: 1px double purple;
+  border: 1px double grey;
+  border-radius: 10px;
+  padding: 10px;
+  height: 140px;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.food h3 {
+  color: orange;
+}
+.food h2 {
+  color: rgb(76, 78, 214);
 }

@@ -1,15 +1,8 @@
 .www {
-  background: rgb(155, 175, 168);
+  /* background: rgb(61, 47, 151); */
   display: flex;
   flex-wrap: wrap;
-  width:30%;
+  width: 30%;
   height: 650px;
   overflow-y: scroll;
-  
 }
-/* .food {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  border: none;
-} */
