@@ -1,8 +1,9 @@
 import React from "react";
 import styl from "./style.module.css";
 
-const CurrentFood = (props) => {
-  console.log(props.shirheg);
+const CurrentFoods = (props) => {
+  const sum = props.price * props.shirheg;
+ 
   return (
     <div className={styl.foode}>
       <img
@@ -12,12 +13,12 @@ const CurrentFood = (props) => {
         height="100px"
       ></img>
       <h3>{props.ner}</h3>
-      <button onClick={() => props.hoolNemeh(props.shirheg)}>+</button>
-      <p>{props.shirheg[props.ner]}</p>
-      <button onClick={() => props.hoolHasah(props.shirheg)}>-</button>
-      <h3>{props.price}</h3>
+      <button onClick={() => props.hoolNemeh(props.index)}>+</button>
+      <p>{props.shirheg}</p>
+      <button onClick={() => props.hoolHasah(props.index)}>-</button>
+      <h3>{sum}</h3>
     </div>
   );
 };
-export default CurrentFood;
+export default CurrentFoods;
 //    current food const ruu hooloo oruulsan
