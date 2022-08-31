@@ -3,7 +3,7 @@ import styl from "./style.module.css";
 
 const CurrentFoods = (props) => {
   const sum = props.price * props.shirheg;
- 
+
   return (
     <div className={styl.foode}>
       <img
@@ -16,7 +16,7 @@ const CurrentFoods = (props) => {
       <button onClick={() => props.hoolNemeh(props.index)}>+</button>
       <p>{props.shirheg}</p>
       <button onClick={() => props.hoolHasah(props.index)}>-</button>
-      <h3>{sum}</h3>
+      <h3>{sum} une</h3>
     </div>
   );
 };

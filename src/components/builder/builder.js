@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CurrentOrder from "../current/current";
 import MenuBuilder from "../menubuilder/menubuilder";
+// import Topbar from "../navbar";
 
 import style from "./style.module.css";
 
@@ -62,31 +63,60 @@ function Appp() {
         "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       shirheg: 0,
     },
-     
+    {
+      ner: "pizza8",
+      price: 80,
+      weight: "160g",
+      imgUrl:
+        "https://images.pexels.com/photos/2641886/pexels-photo-2641886.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      shirheg: 0,
+    },
   ]);
+  const [tot, settot] = useState({
+    totalPrice: 0,
+  });
+  // too nemeh
   const add_stock1 = (i) => {
     let add = [...stock];
     add[i].shirheg++;
     setstock(add);
+    // une nemeh
+    const newPrice = tot.totalPrice + stock[i].price;
+    tot.totalPrice = newPrice;
+    settot(tot);
   };
+  // too hasah
   const add_stock2 = (i) => {
     if ([...stock][i].shirheg !== 0) {
       let add = [...stock];
       add[i].shirheg--;
       setstock(add);
+      // une hasah
+      const newPrice = tot.totalPrice - stock[i].price;
+      tot.totalPrice = newPrice;
+      settot(tot);
     }
   };
   const disabledBtn = { ...stock };
   for (let key in disabledBtn) {
     disabledBtn[key] = disabledBtn[key] <= 0;
   }
+
+  const zahia = (i) => {
+    let add = [...stock];
+    add[i].shirheg++;
+    setstock(add);
+    console.log(zahia);
+  };
+
   return (
     <div className={style.container}>
-      <MenuBuilder foods={stock} />
+      <MenuBuilder foods={stock} nemelt={zahia} />
       <CurrentOrder
         foods={stock}
         hoolNemeh={add_stock1}
         hoolHasah={add_stock2}
+        une={tot}
       />
     </div>
   );

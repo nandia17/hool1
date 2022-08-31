@@ -13,6 +13,7 @@ function CurrentOrder(props) {
         shirheg={el.shirheg}
         hoolNemeh={props.hoolNemeh}
         hoolHasah={props.hoolHasah}
+       
         index={i}
         disabled={props.disabledBtn}
       />
@@ -25,7 +26,7 @@ function CurrentOrder(props) {
       <div className={stylee.wwww}>
         <button>Pay with Cashless Credit</button>
       </div>
-      <h2>Total: {props.price}</h2>
+      <h2>Total: {props.une.totalPrice}</h2>
     </div>
   );
 }
