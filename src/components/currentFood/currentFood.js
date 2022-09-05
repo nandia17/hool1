@@ -1,9 +1,16 @@
 import React from "react";
 import styl from "./style.module.css";
-
+// import Appp from "./components/builder/builder";
 const CurrentFoods = (props) => {
   const sum = props.price * props.shirheg;
-
+  // const none = (i) => {
+  //   if ([...stock][i].shirheg == 0) {
+  //       display:none;
+  //   }
+  // };
+  // const none = {
+  //   display: none,
+  // };
   return (
     <div className={styl.foode}>
       <img
